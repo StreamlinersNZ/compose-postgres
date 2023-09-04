@@ -10,7 +10,7 @@ services:
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
-       - ./data:/shared
+       - ./shared:/shared
     ports:
       - "5432:5432"
     networks:
@@ -26,7 +26,7 @@ services:
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
        - pgadmin:/var/lib/pgadmin
-       - ./data:/shared
+       - ./shared:/shared
 
     ports:
       - "${PGADMIN_PORT:-5050}:80"
